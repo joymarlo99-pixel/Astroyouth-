@@ -6,7 +6,7 @@ import google.generativeai as genai
 app = FastAPI()
 
 # अपनी फ्री Gemini API की सेट करें
-genai.configure(api_key="YOUR_GEMINI_API_KEY")
+genai.configure(api_key="AQ.Ab8RN6Jb9WYigpVxIenzcDc5IAsjVAIoIEZo_1P1ARXzgBszmQ")
 model = genai.GenerativeModel('gemini-1.5-pro')
 
 def get_planetary_positions(year, month, day, hour, lat, lon):
