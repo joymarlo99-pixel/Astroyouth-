@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 # यहाँ अपनी असली Gemini API की डालें (AIzaSy... वाली)
-genai.configure(api_key="AIzaSyADF7W_Q1RMDxE6ul-FjiCgEERsa9mKnu8")
+genai.configure(api_key="AIzaSyD9RdR4bZDnC4hC5IwCcMZBiE2qgkObUdM")
 
 # यहाँ pro की जगह flash कर दिया है
 model = genai.GenerativeModel('gemini-1.5-flash')
