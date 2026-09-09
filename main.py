@@ -4,7 +4,15 @@ import swisseph as swe
 import google.generativeai as genai
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # अपनी फ्री Gemini API की सेट करें
 genai.configure(api_key="AQ.Ab8RN6Jb9WYigpVxIenzcDc5IAsjVAIoIEZo_1P1ARXzgBszmQ")
 model = genai.GenerativeModel('gemini-1.5-pro')
