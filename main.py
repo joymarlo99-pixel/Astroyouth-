@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 # यहाँ अपनी असली Gemini API की डालें
-genai.configure(api_key=" AQ.Ab8RN6L8Na4T573SRbnWsNwoodXqljq3_uQP_VVma-KUi7QEMQ ")
+genai.configure(api_key="AQ.Ab8RN6LHmeTUIn7VZBe4JVqtkUkvITZvMoeTZnRzujoGat3Bpw")
 model = genai.GenerativeModel('gemini-1.5-pro')
 
 class ChatRequest(BaseModel):
