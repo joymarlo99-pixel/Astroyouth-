@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import Optional
 import google.generativeai as genai
 
 app = FastAPI()
 
-# CORS सेटिंग ताकि क्रोम ब्लॉक न करे
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,13 +14,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# यहाँ अपनी असली Gemini API की डालें
+# यहाँ अपनी असली Gemini API की डालें (AIzaSy... वाली)
 genai.configure(api_key="AQ.Ab8RN6LHmeTUIn7VZBe4JVqtkUkvITZvMoeTZnRzujoGat3Bpw")
-model = genai.GenerativeModel('gemini-1.5-pro')
+
+# यहाँ pro की जगह flash कर दिया है
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 class ChatRequest(BaseModel):
     user_message: str
-    dob: dict
+    dob: Optional[dict] = None
 
 @app.post("/chat")
 async def ai_astrologer_chat(request: ChatRequest):
